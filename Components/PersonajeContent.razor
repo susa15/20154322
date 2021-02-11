@@ -1,0 +1,27 @@
+@using BreakingBad.Data
+<div class="content">
+    <div class="container">
+        @if ("".Equals(@Query) || characters == null )
+        {
+            <AlertMessage Title="No character located" Color="warning"></AlertMessage>
+        }
+        @if (!"".Equals(@Query))
+        {
+            @if (characters.Count < 1)
+            {
+                <AlertMessage Title="Loading" Color="info"></AlertMessage>
+            }
+            <CharacterList Characters ="@characters"/> 
+        }
+    </div>
+</div>
+@code{
+    [Parameter] public string Query { get; set; }
+    private List<BBCharacter> characters = null;
+    protected override async Task OnParametersSetAsync()
+    {
+        characters = new List<BBCharacter>();
+        characters =  await BBCharacterService.GetCharactersFromName(Query);
+        if(characters?.Count < 1) Query = "";
+    }
+}

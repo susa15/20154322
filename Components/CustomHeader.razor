@@ -1,0 +1,8 @@
+<div class="header">
+    <img src="img/background.png" alt="fondo" class="header-background">
+    <div class="header-content">@ChildContent</div>
+</div>
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

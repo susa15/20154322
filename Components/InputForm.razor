@@ -1,0 +1,19 @@
+<div class="input-group mb-3">
+    <input type="text" class="form-control mr-2" placeholder="Say my name..." aria-label="BB personaje"
+        @bind-value="@SearchValue" @bind-value:event="oninput" />
+    <div class="input-group-append">
+        <button class="btn btn-primary" type="button" @onclick="@handleSubmit">Buscar</button>
+    </div>
+</div>
+@code{
+    [Parameter]
+    public string SearchValue { get; set; }
+    [Parameter]
+    public EventCallback<string> SearchValueChanged { get; set; }
+
+    private void handleSubmit()
+    {
+        SearchValueChanged.InvokeAsync(SearchValue);
+    }
+
+}

@@ -1,0 +1,11 @@
+@page "/"
+@using BreakingBad.Components
+@using BreakingBad.Data
+<CustomHeader>
+    <InputForm @bind-SearchValue="@SearchName"></InputForm>
+</CustomHeader>
+<PersonajeContent Query="@SearchName"></PersonajeContent>
+
+@code {
+    public string SearchName { get; set; } = "";
+}

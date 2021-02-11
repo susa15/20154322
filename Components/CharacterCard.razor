@@ -1,0 +1,27 @@
+@using BreakingBad.Data
+<div class="card my-4" style="width: 100%;">
+    <div class="row">
+        <div class="col col-4 pl-5 py-2">
+            <img src="@Character.img" alt="character picture" style="width: 100%;">
+        </div>
+        <div class="col col-7">
+            <h3 class="card-title">@Character.name</h3>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Birthday: <strong>@Character.birthday</strong></li>
+                <li class="list-group-item">Nickname: <strong>@Character.nickname</strong></li>
+                <li class="list-group-item">Actor/Actress: <strong>@Character.portrayed</strong></li>
+                <li class="list-group-item">Status: <strong>@Character.status</strong></li>
+                <li class="list-group-item">
+                    <h4 class="card-subtitle mb-2">Occupation</h4>
+                    @foreach (var o in @Character.occupation)
+                    {
+                        <span class="badge badge-pill badge-primary">@o</span>
+                    }
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+@code{
+    [Parameter] public BBCharacter Character { get; set; }
+}

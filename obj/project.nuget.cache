@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AA2daL6bKhPTjScIntLDMlwlnZPAHwUUGv1D//gBySDnTHeQU2zKLbpirpAzw92VaRWF8O5ZD04cZk7evkg2Cg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\diego\\Documents\\Ulises\\trabajos\\BreakingBad\\BreakingBad.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\diego\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

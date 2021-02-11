@@ -1,0 +1,7 @@
+<div class="alert alert-@Color" role="alert">
+    @Title
+</div>
+@code{
+    [Parameter] public string Title { get; set; }
+    [Parameter] public string Color { get; set; } = "primary";
+}

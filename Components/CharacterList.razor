@@ -1,0 +1,11 @@
+@using BreakingBad.Data
+<div class="characters-list container">
+    @foreach (var c in Characters)
+    {
+        <CharacterCard Character="@c"></CharacterCard>
+    }
+</div>
+
+@code{
+    [Parameter] public List<BBCharacter> Characters { get; set; }
+}
